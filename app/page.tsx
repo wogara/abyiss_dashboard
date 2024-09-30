@@ -2,7 +2,7 @@ import Analytics from "@/components/analytics/Analytics";
 import TransactionTable from "@/components/transaction-table/TransactionTable";
 import { Transaction } from "@/types/transaction";
 
-export async function getTransactions() {
+async function getTransactions() {
   const apiKey = process.env.ABYISS_API_KEY;
 
   const response = await fetch(
