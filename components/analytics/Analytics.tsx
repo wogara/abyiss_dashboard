@@ -20,10 +20,10 @@ export default function Analytics({ transactions }: Props) {
     0,
   );
 
-  // Finding the most traded cryptocurrency
+  // Finding the most traded blockchain
   const cryptoVolumeMap: Record<string, number> = {};
   transactions.forEach((tx) => {
-    const currency = tx.sellOrder.currency;
+    const currency = tx.sellOrder.blockchain;
     const volume = parseFloat(tx.sellOrder.quantity);
     if (cryptoVolumeMap[currency]) {
       cryptoVolumeMap[currency] += volume;
@@ -55,7 +55,7 @@ export default function Analytics({ transactions }: Props) {
           </p>
         </div>
         <div className="bg-white p-4 rounded-lg shadow-md">
-          <h3 className="text-lg font-semibold">Most Traded Cryptocurrency</h3>
+          <h3 className="text-lg font-semibold">Most Traded Blockchain</h3>
           <p className="text-2xl font-bold">{mostTradedCrypto}</p>
         </div>
       </div>
